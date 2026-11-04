@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- Prediction: Add your prediction about the swatches before comparing them. -->
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Swatch Test</title>
+        <style>
+            .box {
+                width: 200px;
+                height: 200px;
+            }
+
+            .a {
+                background-color: color-mix(in srgb, #c4513a 50%, #2f6f8f 50%);
+            }
+
+            .b {
+                background-color: color-mix(in oklab, #c4513a 50%, #2f6f8f 50%);
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Swatch Test</h1>
+        <p>Two boxes mix the same colors in equal proportions, using different color spaces.</p>
+        <p>srgb</p>
+        <div class="box a"></div>
+        <p>oklab</p>
+        <div class="box b"></div>
+        <!-- Observation: Both swatches looked good; srgb looked darker and oklab looked more muted. -->
+    </body>
+</html>

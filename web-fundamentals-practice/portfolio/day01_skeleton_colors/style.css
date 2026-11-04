@@ -1,0 +1,39 @@
+:root {
+    --paper: #f3ead9;
+    --ink: #2b2622;
+    --paint: #c4513a;
+    --border: color-mix(in oklab, var(--ink) 20%, var(--paper) 80%);
+    --soft-ink: color-mix(in oklab, var(--ink) 70%, var(--paper) 30%);
+    --wash: color-mix(in oklab, var(--paper) 70%, var(--paint) 30%);
+}
+body {
+    background-color: var(--paper);
+    color: var(--ink);
+}
+
+header {
+    background-color: var(--wash);
+    border-bottom: 1px solid var(--border);
+}
+
+nav ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 1rem;
+}
+
+a {
+    color: var(--ink);
+}
+
+footer {
+    background-color: var(--wash);
+    border-top: 1px solid var(--soft-ink);
+    color: var(--ink);
+    padding: 1rem;
+}
+
+/* color-mix() blends two colors in the proportions you choose. --wash is mostly --paper with some --paint. */
+/* On --wash, --ink has stronger contrast than --paint (8.78:1 vs. 2.69:1). */
