@@ -28,10 +28,12 @@ a {
     color: var(--ink);
 }
 
+/* Links need their own color because browsers give anchors a default color instead of inheriting body text color. */
+
 footer {
     background-color: var(--wash);
-    border-top: 1px solid var(--soft-ink);
-    color: var(--ink);
+    border-top: 1px solid var(--border);
+    color: var(--soft-ink);
     padding: 1rem;
 }
 
