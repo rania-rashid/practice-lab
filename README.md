@@ -8,7 +8,7 @@ Structured practice covering Python, data manipulation, visualization, SQL, and 
 
 ## Project Overview
 
-This repository is a structured learning path covering Python fundamentals, data analysis, machine learning, SQL, ORM, API development, and hands-on practice. It is designed as a beginner-friendly collection of short lesson scripts and mini-projects rather than a single large application.
+This repository is a structured learning path covering Python fundamentals, data analysis, machine learning, SQL, ORM, API development, web fundamentals, and hands-on practice. It is designed as a beginner-friendly collection of short lesson scripts and mini-projects rather than a single large application.
 
 The current focus is on building practical skills in:
 - Python basics and scripting
@@ -17,6 +17,7 @@ The current focus is on building practical skills in:
 - Scikit-learn and machine learning fundamentals
 - SQL and SQLAlchemy
 - FastAPI application development
+- Web fundamentals: HTML, CSS, and JavaScript
 
 ## Current Repository Structure
 
@@ -32,6 +33,7 @@ The current focus is on building practical skills in:
 | `sqlalchemy-practice/` | ORM basics, models, sessions, relationships, querying, Alembic setup | Completed |
 | `fastapi-practice/` | FastAPI basics, validation, dependencies, async patterns, Swagger testing | Completed |
 | `docker/` | Container basics, Docker setup, and image/container workflow practice | Completed |
+| `web-fundamentals-practice/` | Beginner practice with HTML, CSS, and JavaScript | In progress |
 
 ## Learning Progress
 
@@ -60,6 +62,9 @@ Current EDA topics include:
 - ORM work in `sqlalchemy-practice/`
 - REST API learning in `fastapi-practice/`
 - Docker and container workflow practice for deployment and environment setup
+
+### Web Fundamentals Track
+- Learning HTML, CSS, and JavaScript through small practice projects in `web-fundamentals-practice/`
 
 ## Setup
 
