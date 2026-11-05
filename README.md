@@ -4,7 +4,7 @@
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
-Structured practice covering Python, data manipulation, visualization, SQL, and machine learning — progressing toward NLP and LLM engineering.
+Structured learning log: Python, NumPy, pandas, EDA, SQL, FastAPI, Docker, scikit-learn. Daily scripts, 188+ commits.
 
 ## Project Overview
 
@@ -32,7 +32,7 @@ The current focus is on building practical skills in:
 | `sql-practice/` | PostgreSQL exercises and SQL learning track | Completed |
 | `sqlalchemy-practice/` | ORM basics, models, sessions, relationships, querying, Alembic setup | Completed |
 | `fastapi-practice/` | FastAPI basics, validation, dependencies, async patterns, Swagger testing | Completed |
-| `docker/` | Container basics, Docker setup, and image/container workflow practice | Completed |
+| `fastapi-practice/day09_docker/` | Container basics, Docker setup, and image/container workflow practice | Completed |
 | `web-fundamentals-practice/` | Beginner practice with HTML, CSS, and JavaScript | In progress |
 
 ## Learning Progress
@@ -82,7 +82,7 @@ python sklearn-practice/day01_split_baseline.py
 ```
 
 For EDA practice:
-- Start with the raw data file : `dirty_cafe_sales.csv`
+- Start with the raw data file: `eda-practice/cafe-sales/dirty_cafe_sales.csv`
 - Explore the scripts in `eda-practice/` in order
 - Example:
 
