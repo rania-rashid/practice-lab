@@ -1,0 +1,91 @@
+/* My prediction: content-box = 200 px, border-box = 272 px */
+
+:root {
+    --paper: #f3ead9;
+    --ink: #2b2622;
+    --paint: #c4513a;
+    --paint-2: #2f6f8f;
+    --border: color-mix(in oklab, var(--ink) 20%, var(--paper) 80%);
+    --soft-ink: color-mix(in oklab, var(--ink) 70%, var(--paper) 30%);
+    --wash: color-mix(in oklab, var(--paper) 70%, var(--paint) 30%);
+}
+* { box-sizing: border-box; }
+
+body {
+    max-width: 60ch;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+body {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--wash);
+    border-bottom: 1px solid var(--border);
+}
+
+nav ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 1rem;
+}
+
+a {
+    color: var(--ink);
+}
+
+a {
+    color: var(--paint);
+}
+/* Prediction: putting the transition on :hover will make hover-out snap back. */
+a:hover {
+    text-shadow: 2px 0 var(--paint), -2px 0 var(--paint-2);
+    transition: text-shadow 200ms ease;
+    }
+
+.button {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border: 2px solid var(--paint);
+    border-radius: 0.5rem;
+    transition: box-shadow 200ms ease;
+}
+.button:hover {
+    box-shadow: 0 0 20px color-mix(in oklab, var(--paint) 40%, transparent);
+    }
+
+/* Links need their own color because browsers give anchors a default color instead of inheriting body text color. */
+
+footer {
+    background-color: var(--wash);
+    border-top: 1px solid var(--border);
+    color: var(--soft-ink);
+    padding: 1rem;
+}
+
+/* color-mix() blends two colors in the proportions you choose. --wash is mostly --paper with some --paint. */
+/* On --wash, --ink has stronger contrast than --paint (8.78:1 vs. 2.69:1). */
+
+/* The hover transition smooths the text-shadow as the link gains hover, but leaving snaps back because the normal link rule has no transition. */
+/* The text-shadow adds a colored outline effect so the hovered link stands out. */
+/* The button's box-shadow adds a soft glow on hover to make it feel interactive. */
