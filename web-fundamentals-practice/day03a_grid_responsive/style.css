@@ -1,0 +1,126 @@
+/* Prediction: On my laptop, the project area should show two card columns because
+   the available space can fit two 14rem cards and the gap. On a phone-width
+   window, it should show one column because two cards will no longer fit. */
+
+:root {
+    --paper: #f3ead9;
+    --ink: #2b2622;
+    --paint: #c4513a;
+    --paint-2: #2f6f8f;
+    --link: color-mix(in srgb, var(--paint) 80%, var(--ink));
+    --border: color-mix(in oklab, var(--ink) 20%, var(--paper) 80%);
+    --wash: color-mix(in oklab, var(--paper) 70%, var(--paint) 30%);
+}
+* { box-sizing: border-box; }
+
+body {
+    max-width: 60ch;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--wash);
+    border-bottom: 1px solid var(--border);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 1rem;
+}
+
+nav {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+a {
+    color: var(--link);
+    transition: color 200ms ease, text-shadow 200ms ease;
+}
+
+nav a {
+    color: var(--ink);
+}
+
+nav a:hover {
+    color: var(--ink);
+}
+
+a:hover {
+    color: var(--paint-2);
+    text-shadow: 2px 0 var(--paint), -2px 0 var(--paint-2);
+}
+
+.button {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border: 2px solid var(--paint);
+    border-radius: 0.5rem;
+    transition: box-shadow 200ms ease, color 200ms ease, text-shadow 200ms ease;
+}
+.button:hover {
+    box-shadow: 0 0 20px color-mix(in oklab, var(--paint) 40%, transparent);
+}
+
+main section + section {
+    /* Margin separates sections without adding extra space inside each section. */
+    margin-top: 2rem;
+}
+
+h1 {
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+}
+
+
+h2 {
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+footer {
+    background-color: var(--wash);
+    border-top: 1px solid var(--border);
+    color: var(--ink);
+    padding: 1rem;
+}
+
+@media (max-width: 40rem) {
+    header { flex-direction: column; align-items: flex-start; }
+}
+
+/* Evidence: The wide view showed two columns, and the narrow phone-width view
+   changed to one column, matching the prediction. The header also stacked below
+   40rem, and the h1 became smaller as the window narrowed. */
+
+/* Explain-back:
+   grid-template-columns repeats flexible columns while each card stays at
+   least 14rem wide, so the layout can shrink without overflowing.
+   border-radius rounds the card corners, which makes the separate cards easier
+   to see as grouped sections.
+   clamp() lets the heading grow on wide screens but keeps it readable on small
+   screens by enforcing a minimum and maximum size. */
