@@ -1,0 +1,44 @@
+:root {
+    --paper: #f3ead9;
+    --ink: #2b2622;
+    --paint: #c4513a;
+    --paint-2: #2f6f8f;
+    --link: color-mix(in srgb, var(--paint) 80%, var(--ink));
+    --border: color-mix(in oklab, var(--ink) 20%, var(--paper) 80%);
+    --wash: color-mix(in oklab, var(--paper) 70%, var(--paint) 30%);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+tbody tr:nth-child(even) {
+    background: var(--wash);
+}
+
+label {
+    display: block;
+    margin-top: 1rem;
+}
+
+input {
+    width: 100%;
+    padding: 0.5rem;
+    font: inherit;
+}
+
+input:focus {
+    outline: 2px solid var(--paint-2);
+}
+
+/* The table rules add spacing and lines so records are easy to scan. */
+/* The label and input rules put each field on its own line and fill the form width. */
+/* The focus rule adds a visible outline so keyboard users can track focus. */
