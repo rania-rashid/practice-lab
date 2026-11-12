@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Assignment Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Course Assignment Tracker</h1>
+
+    <label for="search">Search assignments</label>
+    <input id="search" type="search" placeholder="Search by course or title">
+
+    <label for="sort">Sort by</label>
+    <select id="sort">
+      <option value="course">Course A-Z</option>
+      <option value="weight">Weight high to low</option>
+      <option value="deadline">Deadline earliest first</option>
+    </select>
+
+    <p id="total-weight">Total weight: 0%</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Course</th>
+          <th>Title</th>
+          <th>Weight</th>
+          <th>Deadline</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="assignment-body"></tbody>
+    </table>
+
+    <p id="empty-message" hidden>No assignments found</p>
+
+    <h2>Add Assignment</h2>
+
+    <form id="assignment-form" novalidate>
+      <label for="course">Course</label>
+      <input id="course" name="course" type="text">
+      <small id="course-error"></small>
+
+      <label for="title">Title</label>
+      <input id="title" name="title" type="text">
+      <small id="title-error"></small>
+
+      <label for="weight">Weight</label>
+      <input id="weight" name="weight" type="number">
+      <small id="weight-error"></small>
+
+      <label for="deadline">Deadline</label>
+      <input id="deadline" name="deadline" type="date">
+      <small id="deadline-error"></small>
+
+      <button type="submit">Add Assignment</button>
+    </form>
+  </main>
+</body>
+</html>
